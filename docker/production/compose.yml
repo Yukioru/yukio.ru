@@ -1,0 +1,8 @@
+services:
+  next-app:
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+    image: next-app-production
+    ports:
+      - "3002:3000"
