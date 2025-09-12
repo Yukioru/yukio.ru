@@ -14,6 +14,35 @@
   }
 
   body {
-    @apply bg-zinc-50;
+    @apply bg-zinc-100;
+  }
+
+  .addition-shadow {
+    box-shadow: inset 0 52px 42px -48px var(--color-zinc-200);
+  }
+
+  @media screen and (min-width: 64rem) {
+    .addition-shadow {
+      box-shadow: inset 52px 0 42px -48px var(--color-zinc-200);
+    }
+  }
+}
+
+@layer components {
+  .icon,
+  .icon-x,
+  .icon-y {
+    @apply select-none fill-current inline-block text-inherit box-content;
+    vertical-align: -0.125em;
+  }
+
+  .icon,
+  .icon-x {
+    @apply w-[1em];
+  }
+
+  .icon,
+  .icon-y {
+    @apply h-[1em];
   }
 }

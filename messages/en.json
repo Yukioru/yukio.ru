@@ -6,5 +6,9 @@
   "Home": {
     "title": "Hi, I'm <strong>Yukioru</strong>",
     "description": "I’ve been into anime and coding for ages, and photography is something I enjoy for fun."
+  },
+  "Skills": {
+    "title": "Skills",
+    "description": "Here are some of my skills and technologies I've worked with."
   }
 }

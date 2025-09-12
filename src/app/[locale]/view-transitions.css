@@ -1,0 +1,107 @@
+/* View Transitions для addition layout */
+@view-transition {
+  navigation: auto;
+}
+
+/* CSS классы для ViewTransition enter/exit */
+.slide-enter-desktop {
+  view-transition-name: addition-panel;
+}
+
+.slide-exit-desktop {
+  view-transition-name: addition-panel;
+}
+
+.slide-enter-mobile {
+  view-transition-name: addition-panel;
+}
+
+.slide-exit-mobile {
+  view-transition-name: addition-panel;
+}
+
+/* Отключаем стандартные анимации полностью */
+::view-transition-group(addition-panel) {
+  animation: none;
+  z-index: 1;
+}
+
+::view-transition-image-pair(addition-panel) {
+  animation: none;
+}
+
+/* DESKTOP анимации */
+@media (min-width: 1024px) {
+  /* Появление слева направо */
+  ::view-transition-new(addition-panel) {
+    animation: slideInFromLeft 0.4s ease-out;
+    transform-origin: left center;
+  }
+
+  /* Уход справа налево */
+  ::view-transition-old(addition-panel) {
+    animation: slideOutToLeft 0.4s ease-in;
+    transform-origin: left center;
+  }
+}
+
+/* MOBILE анимации */
+@media (max-width: 1023px) {
+  /* Появление сверху вниз */
+  ::view-transition-new(addition-panel) {
+    animation: slideInFromTop 0.4s ease-out;
+    transform-origin: center top;
+  }
+
+  /* Уход снизу вверх */
+  ::view-transition-old(addition-panel) {
+    animation: slideOutToTop 0.4s ease-in;
+    transform-origin: center top;
+  }
+}
+
+/* Desktop keyframes */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile keyframes */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutToTop {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
