@@ -1,5 +1,11 @@
 import { PropsWithParamsLocale } from "~/types";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Motion from "~/components/Motion";
+import Game from "~/components/Game";
+
+import wuwa from '~/assets/images/wuwa.png';
+import hsr from '~/assets/images/hsr.png';
+import zzz from '~/assets/images/zzz.png';
 
 export const experimental_ppr = true;
 
@@ -9,11 +15,34 @@ export default async function SkillsPage({ params }: PropsWithParamsLocale) {
   const t = await getTranslations('Games');
 
   return (
-    <div className="p-6 flex flex-col gap-2">
-      <h2 className="text-xl font-semibold">{t('title')}</h2>
-      <div>
-        <p>{t('description')}</p>
+    <Motion
+      initial={{ opacity: 0, y: '20%' }}
+      animate={{ opacity: 1, y: '0%' }}
+      exit={{ opacity: 0, y: '-20%' }}
+      transition={{ duration: 0.15, ease: 'easeOut', delay: 0.1 }}
+      className="p-6 flex flex-col gap-6 text-zinc-700"
+    >
+      <h2 className="text-2xl font-light">{t('title')}</h2>
+      <div className="flex flex-col gap-8">
+        <p className="font-light">{t('description')}</p>
+        <div className="flex flex-col gap-6">
+          <Game
+            image={wuwa}
+            title="Wuthering Waves"
+            uid="600115012"
+          />
+          <Game
+            image={hsr}
+            title="Honkai: Star Rail"
+            uid="701308909"
+          />
+          <Game
+            image={zzz}
+            title="Zenless Zone Zero"
+            uid="1500088921"
+          />
+        </div>
       </div>
-    </div>
+    </Motion>
   );
 }

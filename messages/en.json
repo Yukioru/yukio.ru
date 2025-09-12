@@ -1,18 +1,18 @@
 {
   "Meta": {
     "title": "Yukioru - Otaku Programmer",
-    "description": "Yukioru's personal website - an otaku programmer who loves coding and anime."
+    "description": "Yukioru's personal website - an otaku programmer who loves coding and anime"
   },
   "Home": {
     "title": "Hi, I'm <strong>Yukioru</strong>",
     "real_name": "Andrey Kondalov",
-    "description": "I’ve been into anime and coding for ages, and photography is something I enjoy for fun.",
+    "description": "I’ve been into anime and coding for ages, and photography is something I enjoy for fun",
     "menu_skills": "Skills",
     "menu_games": "Games"
   },
   "Skills": {
     "title": "Skills",
-    "description": "Here are some of my skills and technologies I've worked with.",
+    "description": "Here are some of my skills and technologies I've worked with",
     "areas": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -21,6 +21,6 @@
   },
   "Games": {
     "title": "Games",
-    "description": "Here are some games I've been playing from time to time."
+    "description": "Here are some games I've been playing from time to time"
   }
 }
