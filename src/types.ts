@@ -1,0 +1,1 @@
+export type PropsWithParamsLocale<P = unknown> = P & { params: Promise<{ locale: string }> };

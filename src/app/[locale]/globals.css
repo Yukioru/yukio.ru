@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geologica);
+}
+
+@layer base {
+  html, body {
+    @apply h-full min-h-full;
+  }
+
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    @apply bg-zinc-50;
+  }
+}
