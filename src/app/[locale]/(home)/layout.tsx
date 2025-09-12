@@ -5,6 +5,8 @@ import { PropsWithParamsLocale } from "~/types";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PropsWithChildren } from "react";
 import SmartArrowLink from "~/components/SmartArrowLink";
+import IconLink from "~/components/IconLink";
+import Icon from "~/components/Icon";
 
 export const experimental_ppr = true;
 
@@ -30,15 +32,43 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
           <div className="px-6 flex flex-col gap-4">
             <h1 className="text-2xl text-zinc-800">
               {t.rich('title', {
-                strong: (chunks) => <strong className="font-medium">{chunks}</strong>
+                strong: (chunks) => (
+                  <div className="inline-flex flex-col">
+                    <strong className="font-medium">{chunks}</strong>
+                    <div className="font-light text-sm leading-3 text-zinc-500 pl-0.5">{t('real_name')}</div>
+                  </div>
+                )
               })}
             </h1>
             <p className="text-zinc-700 font-light">
               {t('description')}
             </p>
           </div>
-          <div className="border-t border-t-zinc-200/75 px-4 py-4 text-sm rounded-b-3xl bg-zinc-50">
-            <SmartArrowLink href="/skills">Skills</SmartArrowLink>
+          <div className="flex flex-col mt-auto">
+            <div className="px-4 pb-4 pt-0 lg:pt-4 text-sm lg:rounded-b-3xl flex gap-1 lg:order-1">
+              <IconLink href="mailto:i@yukio.ru" aria-label="VK" target="_blank" rel="noopener nofollow noreferrer" className="text-[1.45rem]">
+                <Icon name="icons:email" />
+              </IconLink>
+              <IconLink href="https://s.yukio.ru/telegram" aria-label="Telegram" target="_blank" rel="noopener nofollow noreferrer" className="text-[1.45rem]">
+                <Icon name="icons:telegram" />
+              </IconLink>
+              <IconLink href="https://s.yukio.ru/vk" aria-label="VK" target="_blank" rel="noopener nofollow noreferrer" className="text-[1.6rem]">
+                <Icon name="icons:vk" />
+              </IconLink>
+              <IconLink href="https://s.yukio.ru/x" aria-label="X" target="_blank" rel="noopener nofollow noreferrer" className="text-[1.2rem]">
+                <Icon name="icons:x" />
+              </IconLink>
+              <IconLink href="https://s.yukio.ru/twitch" aria-label="Twitch" target="_blank" rel="noopener nofollow noreferrer" className="text-[1.35rem]">
+                <Icon name="icons:twitch" />
+              </IconLink>
+              <IconLink href="https://s.yukio.ru/mal" aria-label="MyAnimeList" target="_blank" rel="noopener nofollow noreferrer" className="text-[1.5rem]">
+                <Icon name="icons:mal" />
+              </IconLink>
+            </div>
+            <div className="border-t lg:border-b border-zinc-200/75 rounded-b-3xl lg:rounded-none p-4 text-sm bg-zinc-50 flex flex-col gap-1">
+              <SmartArrowLink href="/skills">{t('menu_skills')}</SmartArrowLink>
+              <SmartArrowLink href="/games">{t('menu_games')}</SmartArrowLink>
+            </div>
           </div>
         </Card>
         {children}
