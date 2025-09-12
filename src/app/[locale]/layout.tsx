@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geologica } from "next/font/google";
 import "./globals.css";
 import { PropsWithChildren } from "react";
@@ -20,13 +20,25 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export async function generateMetadata({ params }: PropsWithParamsLocale): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
   return {
     title: t('title'),
     description: t('description'),
-  }
+    manifest: '/site.webmanifest',
+    icons: {
+      icon: "/favicon-32x32.png",
+      shortcut: "/favicon-16x16.png",
+      apple: "/apple-touch-icon.png",
+    },
+  } satisfies Metadata;
 }
 
 export default async function RootLayout({

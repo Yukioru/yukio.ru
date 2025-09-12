@@ -21,6 +21,10 @@
   },
   "Games": {
     "title": "Games",
-    "description": "Here are some games I've been playing from time to time"
+    "description": "Here are some games I've been playing from time to time",
+    "wuwa": "Wuthering Waves",
+    "hsr": "Honkai: Star Rail",
+    "zzz": "Zenless Zone Zero",
+    "eu_server": "EU server"
   }
 }

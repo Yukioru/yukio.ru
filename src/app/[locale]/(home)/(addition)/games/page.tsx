@@ -28,17 +28,20 @@ export default async function SkillsPage({ params }: PropsWithParamsLocale) {
         <div className="flex flex-col gap-6">
           <Game
             image={wuwa}
-            title="Wuthering Waves"
+            title={t('wuwa')}
+            server={t('eu_server')}
             uid="600115012"
           />
           <Game
             image={hsr}
-            title="Honkai: Star Rail"
+            title={t('hsr')}
+            server={t('eu_server')}
             uid="701308909"
           />
           <Game
             image={zzz}
-            title="Zenless Zone Zero"
+            title={t('zzz')}
+            server={t('eu_server')}
             uid="1500088921"
           />
         </div>

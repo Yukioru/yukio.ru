@@ -1,13 +1,14 @@
 import Image from "next/image";
-import Card from "~/components/Card";
-import morgana from '~/assets/images/morgana.png';
-import { PropsWithParamsLocale } from "~/types";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PropsWithChildren } from "react";
+import { PropsWithParamsLocale } from "~/types";
 import SmartArrowLink from "~/components/SmartArrowLink";
 import IconLink from "~/components/IconLink";
 import Icon from "~/components/Icon";
 import Animate from "~/components/Animate";
+import GradientCard from "~/components/GradientCard";
+import morgana from '~/assets/images/morgana.png';
+import LocaleSwitcher from "~/components/LocaleSwitcher";
 
 export const experimental_ppr = true;
 
@@ -19,7 +20,10 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
   return (
     <div className="flex flex-1 items-center justify-center">
       <div className="flex flex-col lg:flex-row isolate">
-        <Card className="max-w-96 mx-auto flex flex-col gap-10">
+        <GradientCard>
+          <div className="absolute top-3 right-3">
+            <LocaleSwitcher />
+          </div>
           <div className="text-center pt-8">
             <Image
               priority
@@ -30,13 +34,13 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
               className="mx-auto rounded-full bg-gradient-to-br from-red-500 to-red-600 select-none"
             />
           </div>
-          <div className="px-6 flex flex-col gap-4">
+          <div className="px-6 flex flex-col gap-6">
             <h1 className="text-2xl text-zinc-800">
               {t.rich('title', {
                 strong: (chunks) => (
-                  <div className="inline-flex flex-col">
+                  <div className="inline-flex flex-col relative">
                     <strong className="font-medium">{chunks}</strong>
-                    <div className="font-light text-sm leading-3 text-zinc-500 pl-0.5">{t('real_name')}</div>
+                    <div className="absolute -bottom-2.5 whitespace-nowrap font-light text-sm leading-3 text-zinc-500 pl-0.5">{t('real_name')}</div>
                   </div>
                 )
               })}
@@ -107,7 +111,7 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
               <SmartArrowLink href="/games">{t('menu_games')}</SmartArrowLink>
             </div>
           </div>
-        </Card>
+        </GradientCard>
         <Animate mode="sync">{children}</Animate>
       </div>
     </div>
