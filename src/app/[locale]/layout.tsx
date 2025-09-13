@@ -55,7 +55,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir="ltr" className={clsx(geologica.variable, 'antialiased')}>
       <body>
-        <main className="container mx-auto py-8 min-h-full flex flex-col">
+        <main className="container mx-auto py-6 min-h-full flex flex-col">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </main>
       </body>
