@@ -20,11 +20,11 @@ export default function SmartArrowLink<RouteType>({ className, children, ...prop
       className={twMerge(clsx([
         'flex gap-4 py-3 px-4',
         'rounded-xl cursor-pointer transition-colors',
-        'hover:bg-zinc-200/50',
+        'hover:bg-zinc-200/50 dark:hover:bg-zinc-700/50 dark:hover:text-zinc-200',
       ], [
         pathname.startsWith(props.href.toString())
-          ? 'bg-zinc-200/50 text-zinc-700'
-          : 'bg-transparent text-zinc-600',
+          ? 'bg-zinc-200/50 text-zinc-700 dark:bg-zinc-700/50 dark:text-zinc-200'
+          : 'bg-transparent text-zinc-600 dark:text-zinc-400',
       ], className))}
     >
       <div className="overflow-hidden text-ellipsis whitespace-nowrap">{children}</div>

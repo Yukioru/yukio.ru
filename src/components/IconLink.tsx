@@ -15,7 +15,7 @@ export default function IconLink<RouteType>({ className, children, ...props }: I
       className={twMerge(clsx([
         'flex items-center justify-center p-2 text-[1.1rem] w-10 h-10',
         'rounded-xl cursor-pointer transition-colors',
-        'bg-transparent text-zinc-600 hover:bg-zinc-200/50',
+        'bg-transparent text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200/50 dark:hover:bg-zinc-600/50',
       ], className))}
     >
       {children}

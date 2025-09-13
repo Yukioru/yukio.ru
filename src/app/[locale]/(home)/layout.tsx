@@ -9,6 +9,7 @@ import Animate from "~/components/Animate";
 import GradientCard from "~/components/GradientCard";
 import morgana from '~/assets/images/morgana.png';
 import LocaleSwitcher from "~/components/LocaleSwitcher";
+import clsx from "clsx";
 
 export const experimental_ppr = true;
 
@@ -35,17 +36,27 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
             />
           </div>
           <div className="px-6 flex flex-col gap-6">
-            <h1 className="text-2xl text-zinc-800">
+            <h1
+              className={clsx('text-zinc-800 dark:text-zinc-100', [
+                locale === 'ja' ? 'leading-7 text-[1.1875rem] sm:text-xl' : 'text-2xl',
+              ])}
+            >
               {t.rich('title', {
                 strong: (chunks) => (
                   <div className="inline-flex flex-col relative">
-                    <strong className="font-medium">{chunks}</strong>
-                    <div className="absolute -bottom-2.5 whitespace-nowrap font-light text-sm leading-3 text-zinc-500 pl-0.5">{t('real_name')}</div>
+                    <strong className={clsx([locale === 'ja' ? 'font-semibold' : 'font-medium'])}>{chunks}</strong>
+                    <div
+                      className={clsx('absolute -bottom-2.5 whitespace-nowrap leading-3 text-zinc-500 pl-0.5', [
+                        locale === 'ja' ? 'text-xs font-medium' : 'text-sm font-light',
+                      ])}
+                    >
+                      {t('real_name')}
+                    </div>
                   </div>
                 )
               })}
             </h1>
-            <p className="text-zinc-700 font-light">
+            <p className="text-zinc-700 dark:text-zinc-300 font-light">
               {t('description')}
             </p>
           </div>
@@ -106,7 +117,7 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
                 <Icon name="icons:mal" />
               </IconLink>
             </div>
-            <div className="border-t lg:border-b border-zinc-200/75 rounded-b-3xl lg:rounded-none p-4 text-sm bg-zinc-50 flex flex-col gap-1">
+            <div className="border-t lg:border-b border-zinc-200/75 dark:border-zinc-800/75 rounded-b-3xl lg:rounded-none p-4 text-sm bg-zinc-50 dark:bg-zinc-950 flex flex-col gap-1">
               <SmartArrowLink href="/skills">{t('menu_skills')}</SmartArrowLink>
               <SmartArrowLink href="/games">{t('menu_games')}</SmartArrowLink>
             </div>

@@ -35,17 +35,17 @@ export default function AdditionLayout({ children }: PropsWithChildren) {
       exit={{ opacity: 0, x: '-20%' }}
       transition={{ duration: 0.15, ease: 'easeOut' }}
       className={clsx([
-        'bg-white border border-zinc-200/75 rounded-3xl overflow-y-hidden',
+        'bg-white dark:bg-zinc-900 border border-zinc-200/75 dark:border-zinc-700/75 rounded-3xl overflow-y-hidden',
         'flex flex-col gap-10 relative',
         'max-w-96',
         'pt-6 -mt-6 lg:pt-0 lg:mt-0 lg:pl-6 lg:-ml-6 -z-10',
-        'rounded-t-none lg:rounded-t-3xl lg:rounded-l-none addition-shadow'
+        'rounded-t-none lg:rounded-t-3xl lg:rounded-l-none addition-shadow',
       ])}
     >
       <Link 
         href="/" 
         onClick={handleCloseClick}
-        className="absolute right-0 top-6 lg:top-0 p-4 w-6 h-6 box-content flex items-center justify-center text-zinc-600"
+        className="absolute right-0 top-6 lg:top-0 p-4 w-6 h-6 box-content flex items-center justify-center text-zinc-600 dark:text-zinc-300"
       >
         <Icon name="icons:close" className="text-2xl" />
       </Link>

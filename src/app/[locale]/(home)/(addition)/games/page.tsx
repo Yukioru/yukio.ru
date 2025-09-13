@@ -20,9 +20,9 @@ export default async function SkillsPage({ params }: PropsWithParamsLocale) {
       animate={{ opacity: 1, y: '0%' }}
       exit={{ opacity: 0, y: '-20%' }}
       transition={{ duration: 0.15, ease: 'easeOut', delay: 0.1 }}
-      className="p-6 flex flex-col gap-6 text-zinc-700"
+      className="p-6 flex flex-col gap-6 text-zinc-700 dark:text-zinc-300"
     >
-      <h2 className="text-2xl font-light">{t('title')}</h2>
+      <h2 className="text-2xl font-light text-zinc-800 dark:text-zinc-200">{t('title')}</h2>
       <div className="flex flex-col gap-8">
         <p className="font-light">{t('description')}</p>
         <div className="flex flex-col gap-6">
