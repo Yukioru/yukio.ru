@@ -1,8 +1,26 @@
+networks:
+  traefik:
+    name: traefik
+    external: true
+
 services:
-  next-app:
+  yukioru-production:
     build:
       context: ../../
       dockerfile: docker/production/Dockerfile
-    image: next-app-production
-    ports:
-      - "3002:3000"
+    image: yukioru-production
+    container_name: yukioru-production
+    restart: always
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.yukioru.rule=Host(`yukio.ru`)
+      - traefik.http.routers.yukioru.middlewares=gzip@file,hsts@file
+      - traefik.http.routers.yukioru.entrypoints=websecure
+      - traefik.http.routers.yukioru.service=yukioru
+      - traefik.http.routers.yukioru.tls=true
+      - traefik.http.routers.yukioru.tls.certresolver=letsencrypt
+      - traefik.http.routers.yukioru.tls.domains[0].main=yukio.ru
+      - traefik.http.routers.yukioru.tls.domains[0].sans=*.yukio.ru
+      - traefik.http.services.yukioru.loadbalancer.server.port=3000
