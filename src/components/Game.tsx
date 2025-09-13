@@ -23,7 +23,7 @@ export default function Game({ image, title, server, uid }: GameProps) {
           <div className="text-sm whitespace-nowrap text-ellipsis overflow-hidden">
             {title}
           </div>
-          <div className="text-[0.6875rem] font-light text-zinc-400 dark:text-zinc-500 leading-2">
+          <div className="text-[0.6875rem] font-light text-zinc-400 leading-2">
             {server}
           </div>
         </div>

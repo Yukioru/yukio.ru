@@ -46,7 +46,7 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
                   <div className="inline-flex flex-col relative">
                     <strong className={clsx([locale === 'ja' ? 'font-semibold' : 'font-medium'])}>{chunks}</strong>
                     <div
-                      className={clsx('absolute -bottom-2.5 whitespace-nowrap leading-3 text-zinc-500 pl-0.5', [
+                      className={clsx('absolute -bottom-2.5 whitespace-nowrap leading-3 text-zinc-400 pl-0.5', [
                         locale === 'ja' ? 'text-xs font-medium' : 'text-sm font-light',
                       ])}
                     >
