@@ -8,9 +8,9 @@ const withNextIntl = createNextIntlPlugin({
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  reactCompiler: true,
+  cacheComponents: true,
   experimental: {
-    ppr: 'incremental',
-    reactCompiler: true,
     cssChunking: true,
   },
   webpack(config, { isServer }) {
