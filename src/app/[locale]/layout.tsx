@@ -9,8 +9,6 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PropsWithParamsLocale } from "~/types";
 
-export const experimental_ppr = true;
-
 const geologica = Geologica({
   variable: "--font-geologica",
   subsets: ["latin", 'cyrillic'],

@@ -7,8 +7,6 @@ import Icon from "~/components/Icon";
 import Motion from "~/components/Motion";
 import Animate from "~/components/Animate";
 
-export const experimental_ppr = true;
-
 export default function AdditionLayout({ children }: PropsWithChildren) {
   const router = useRouter();
   const motionRef = useRef<HTMLDivElement>(null);

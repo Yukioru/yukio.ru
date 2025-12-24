@@ -3,8 +3,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Tag from "~/components/Tag";
 import Motion from "~/components/Motion";
 
-export const experimental_ppr = true;
-
 const skillTree = {
   frontend: ['TypeScript', 'React', 'MobX', 'Redux', 'Next.js', 'Tailwind CSS', 'CSS Modules'],
   backend: ['Node.js', 'Bun', 'Express', 'MongoDB', 'Redis', 'Docker', 'Traefik', 'CI/CD'],

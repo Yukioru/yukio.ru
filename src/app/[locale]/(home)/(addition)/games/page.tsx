@@ -7,8 +7,6 @@ import wuwa from '~/assets/images/wuwa.png';
 import hsr from '~/assets/images/hsr.png';
 import zzz from '~/assets/images/zzz.png';
 
-export const experimental_ppr = true;
-
 export default async function SkillsPage({ params }: PropsWithParamsLocale) {
   const { locale } = await params;
   setRequestLocale(locale);

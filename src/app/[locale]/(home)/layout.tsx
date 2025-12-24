@@ -11,8 +11,6 @@ import morgana from '~/assets/images/morgana.png';
 import LocaleSwitcher from "~/components/LocaleSwitcher";
 import clsx from "clsx";
 
-export const experimental_ppr = true;
-
 export default async function HomeLayout({ children, params }: PropsWithChildren<PropsWithParamsLocale>) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -32,7 +30,7 @@ export default async function HomeLayout({ children, params }: PropsWithChildren
               height={120}
               src={morgana}
               alt="Yukioru"
-              className="mx-auto rounded-full bg-gradient-to-br from-red-500 to-red-600 select-none"
+              className="mx-auto rounded-full bg-linear-to-br from-red-500 to-red-600 select-none"
             />
           </div>
           <div className="px-6 flex flex-col gap-6">
